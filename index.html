@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkillUp — Learn skills that get you hired</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <!-- Uses Flexbox to space the logo, links, and button apart -->
+  <header class="navbar">
+    <div class="nav-logo">Skillup</div>
+
+    <nav class="nav-links">
+      <a href="#courses">Courses</a>
+      <a href="#features">How it works</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#pricing" class="btn btn-primary nav-cta">Start learning</a>
+  </header>
+
+  <!-- ============ HERO SECTION ============ -->
+  <!-- Two-column layout: text on the left, a CSS-drawn illustration on the right -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Learn skills that<br>get you hired.</h1>
+      <p class="hero-sub">
+        Skillup teaches front-end development the way employers actually
+        expect you to know it — through real projects, not just videos.
+      </p>
+      <div class="hero-actions">
+        <a href="#courses" class="btn btn-primary">Browse courses</a>
+        <a href="#features" class="btn btn-ghost">See how it works</a>
+      </div>
+    </div>
+
+    <div class="hero-graphic" aria-hidden="true">
+      <!-- Pure CSS "code editor" mockup — no image files needed -->
+      <div class="code-card">
+        <div class="code-card-header">
+          <span class="dot dot-red"></span>
+          <span class="dot dot-yellow"></span>
+          <span class="dot dot-green"></span>
+        </div>
+        <div class="code-line line-1"></div>
+        <div class="code-line line-2"></div>
+        <div class="code-line line-3"></div>
+        <div class="code-line line-4"></div>
+        <div class="code-line line-short"></div>
+      </div>
+      <div class="floating-badge">✓ Project reviewed</div>
+    </div>
+  </section>
+
+  <!-- ============ FEATURES SECTION ============ -->
+  <!-- CSS Grid for the three cards -->
+  <section class="features" id="features">
+    <h2>How Skillup is different</h2>
+    <div class="features-grid">
+
+      <div class="feature-card">
+        <div class="feature-icon">◆</div>
+        <h3>Project-based paths</h3>
+        <p>Every lesson ends in something you build, not a quiz you forget the next day.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">◆</div>
+        <h3>Real code review</h3>
+        <p>A working developer reads your code and tells you what a client actually cares about.</p>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">◆</div>
+        <h3>Freelance-ready portfolio</h3>
+        <p>You leave with projects built to be shown, not shelved — ready for Mostaql or LinkedIn.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ PRICING SECTION ============ -->
+  <section class="pricing" id="pricing">
+    <h2>Start free. Upgrade when you're ready.</h2>
+    <div class="pricing-grid">
+
+      <div class="price-card">
+        <h3>Starter</h3>
+        <p class="price">Free</p>
+        <ul>
+          <li>HTML &amp; CSS fundamentals</li>
+          <li>3 guided projects</li>
+          <li>Community support</li>
+        </ul>
+        <a href="#" class="btn btn-ghost">Get started</a>
+      </div>
+
+      <div class="price-card price-card-featured">
+        <h3>Pro</h3>
+        <p class="price">$12<span>/month</span></p>
+        <ul>
+          <li>Everything in Starter</li>
+          <li>JavaScript &amp; React tracks</li>
+          <li>1:1 code reviews</li>
+          <li>Portfolio feedback</li>
+        </ul>
+        <a href="#" class="btn btn-primary">Go Pro</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer" id="contact">
+    <div class="footer-content">
+      <div class="nav-logo">Skillup</div>
+      <div class="footer-links">
+        <a href="#courses">Courses</a>
+        <a href="#features">How it works</a>
+        <a href="#pricing">Pricing</a>
+      </div>
+    </div>
+    <p class="footer-copy">© 2026 Skillup. Built as a learning project.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,382 @@
+/* ============================================
+   DESIGN TOKENS — change these and the whole
+   page updates. This is why we define colors
+   and spacing as variables instead of typing
+   hex codes everywhere.
+   ============================================ */
+:root {
+  --ink: #16213E;        /* deep navy — text, header bg */
+  --base: #FDFBF6;       /* warm off-white — page background */
+  --accent: #FFB627;     /* mustard yellow — primary actions */
+  --teal: #2D9596;       /* secondary accent */
+  --muted: #5C6178;      /* muted text for subheadings */
+  --card-bg: #FFFFFF;
+
+  --radius: 10px;
+  --max-width: 1100px;
+}
+
+/* ============================================
+   RESET — removes default browser spacing so
+   we control margins ourselves
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* width/height includes padding+border */
+}
+
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: var(--ink);
+  background: var(--base);
+  line-height: 1.5;
+}
+
+h1, h2, h3 {
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* Reusable "container" pattern: centers content and
+   caps its width so text doesn't stretch too wide */
+.navbar, .hero, .features, .pricing, .footer-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================ */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--ink);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 182, 39, 0.4);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1.5px solid var(--ink);
+}
+
+.btn-ghost:hover {
+  background: var(--ink);
+  color: var(--base);
+}
+
+/* ============================================
+   NAVBAR — Flexbox: three items spaced apart
+   ============================================ */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+.nav-logo {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.nav-links {
+  display: flex;
+  gap: 32px;
+}
+
+.nav-links a:hover {
+  color: var(--teal);
+}
+
+/* Hide the nav links + show only the logo/CTA on small screens
+   (see media query at the bottom) */
+
+/* ============================================
+   HERO — Flexbox: text column + graphic column
+   ============================================ */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  padding-top: 48px;
+  padding-bottom: 96px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-text h1 {
+  font-size: 48px;
+  letter-spacing: -0.5px;
+}
+
+.hero-sub {
+  color: var(--muted);
+  font-size: 18px;
+  max-width: 480px;
+  margin-top: 20px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+/* --- CSS-only "code editor" illustration --- */
+.hero-graphic {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.code-card {
+  background: var(--ink);
+  border-radius: var(--radius);
+  padding: 20px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 20px 40px rgba(22, 33, 62, 0.25);
+}
+
+.code-card-header {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+.dot-red { background: #FF5F56; }
+.dot-yellow { background: #FFBD2E; }
+.dot-green { background: #27C93F; }
+
+.code-line {
+  height: 10px;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  margin-bottom: 12px;
+}
+.line-1 { width: 80%; background: rgba(255, 182, 39, 0.6); }
+.line-2 { width: 60%; }
+.line-3 { width: 90%; background: rgba(45, 149, 150, 0.6); }
+.line-4 { width: 40%; }
+.line-short { width: 30%; margin-bottom: 0; }
+
+.floating-badge {
+  position: absolute;
+  bottom: -16px;
+  right: 24px;
+  background: var(--teal);
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: 999px;
+  box-shadow: 0 8px 20px rgba(45, 149, 150, 0.35);
+}
+
+/* ============================================
+   FEATURES — CSS Grid: 3 equal columns
+   ============================================ */
+.features {
+  padding-top: 40px;
+  padding-bottom: 96px;
+}
+
+.features h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  max-width: 500px;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.feature-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 28px;
+  border: 1px solid rgba(22, 33, 62, 0.08);
+}
+
+.feature-icon {
+  color: var(--accent);
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.feature-card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.feature-card p {
+  color: var(--muted);
+  font-size: 15px;
+}
+
+/* ============================================
+   PRICING — CSS Grid: 2 columns
+   ============================================ */
+.pricing {
+  padding-top: 40px;
+  padding-bottom: 96px;
+}
+
+.pricing h2 {
+  font-size: 32px;
+  margin-bottom: 40px;
+  max-width: 500px;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 720px;
+}
+
+.price-card {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 32px;
+  border: 1px solid rgba(22, 33, 62, 0.08);
+}
+
+.price-card-featured {
+  background: var(--ink);
+  color: var(--base);
+  border: none;
+}
+
+.price-card-featured .btn-ghost {
+  border-color: var(--base);
+  color: var(--base);
+}
+
+.price {
+  font-size: 32px;
+  font-weight: 800;
+  margin: 16px 0 24px;
+}
+
+.price span {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+.price-card ul {
+  margin-bottom: 28px;
+}
+
+.price-card li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(22, 33, 62, 0.08);
+  font-size: 15px;
+}
+
+.price-card-featured li {
+  border-bottom: 1px solid rgba(253, 251, 246, 0.15);
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer {
+  background: var(--ink);
+  color: var(--base);
+  padding-top: 48px;
+  padding-bottom: 32px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 32px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+}
+
+.footer-copy {
+  text-align: center;
+  font-size: 13px;
+  color: rgba(253, 251, 246, 0.5);
+}
+
+/* ============================================
+   RESPONSIVE — this is the part that makes the
+   page usable on a phone screen
+   ============================================ */
+@media (max-width: 768px) {
+
+  .nav-links {
+    display: none; /* simplest mobile approach: hide links, keep logo + CTA */
+  }
+
+  .hero {
+    flex-direction: column;   /* stack text above graphic instead of side by side */
+    text-align: left;
+    padding-bottom: 64px;
+  }
+
+  .hero-text h1 {
+    font-size: 34px;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr; /* one column instead of three */
+  }
+
+  .pricing-grid {
+    grid-template-columns: 1fr; /* one column instead of two */
+  }
+
+  .footer-content {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}
